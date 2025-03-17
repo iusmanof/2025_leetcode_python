@@ -1,1 +1,1 @@
-python -m unittest discover
+python -m unittest discover = Python Test Explorer for Visual Studio Code
