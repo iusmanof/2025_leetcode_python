@@ -1,4 +1,3 @@
-str = "qwdwqd"
+str = "qwdwqd1"
 
-for i in range(len(str)):
-    print(i)
+print(int(str))
