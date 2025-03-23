@@ -1,5 +1,15 @@
-dict_roman_int = {"M": 1000, "CM": 900, "D": "500", "CD": 400, "C": 100}
+dict_roman_to_item = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
+s = "XIV"
 
-for k,v in dict_roman_int.items():
-    print(k , ": ", v)
+i = 0
+result = 0
+while i < len(s): 
+    j = i + 1
+    if j < len(s) and dict_roman_to_item[s[i]] < dict_roman_to_item[s[j]]:
+        result+=dict_roman_to_item[s[j]] - dict_roman_to_item[s[i]]
+        i+=2
+    else:
+        result += dict_roman_to_item[s[i]]
+        i+=1
+print(result)
