@@ -1,15 +1,11 @@
-dict_roman_to_item = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+strs = ["flower","flow","flight"]
 
-s = "XIV"
 
-i = 0
-result = 0
-while i < len(s): 
-    j = i + 1
-    if j < len(s) and dict_roman_to_item[s[i]] < dict_roman_to_item[s[j]]:
-        result+=dict_roman_to_item[s[j]] - dict_roman_to_item[s[i]]
-        i+=2
+result = ""
+for i in range(len(min(strs, key=len))): 
+    if all(s[:i+1] == strs[0][:i+1] for s in strs):
+        result += strs[0][i]
     else:
-        result += dict_roman_to_item[s[i]]
-        i+=1
+        break
+    
 print(result)
