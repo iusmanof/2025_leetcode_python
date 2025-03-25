@@ -1,30 +1,25 @@
-nums = [-1,2,1,-4]
-target = 1
-nums.sort()
-n = len(nums)
-csum = float('inf')
+digits = "23"
 
-for i in range(n):
-    if i > 0 and nums[i] == nums[i-1]:
-        print(nums)
-        print(nums-1)
-        continue
+res = []
+digitsToChar = {
+    2: "abc",
+    3: "def",
+    4: "ghi",
+    5: "jkl",
+    6: "mno",
+    7: "qprs",
+    8: "tuv",
+    9: "wxyz"
+}
+
+def backtrack(i, curStr):
+    if len(curStr) == len(digits):
+        res.append(curStr)
+        return
+    for c in digitsToChar[int(digits[i])]:
+        backtrack(i + 1, curStr + c)
+
+if digits:
+    backtrack(0, "")
     
-    low = i + 1 
-    high = n -1
-    while low < high:
-        current_sum = nums[i] + nums[low] + nums[high]
-        
-        print("abs csum: ", abs(csum))
-        if abs(current_sum - target) < abs(csum - target):
-            csum = current_sum
-        
-        if csum == target:
-            # return csum
-            print(csum)
-        elif csum < target:
-            low += 1
-        else:
-            high -= 1
-            
-    print(csum)
+print(res)
