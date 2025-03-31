@@ -8,7 +8,7 @@ from mergeksl import Solution, ListNode
 
 class TestCaseMergeKSL(unittest.TestCase):
     
-    def list_to_linked_list(self, arr):  # Добавил self
+    def list_to_linked_list(self, arr):
         if not arr:
             return None
         dummy = ListNode(0)
